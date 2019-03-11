@@ -5,7 +5,7 @@ metadata:
 spec:
   type: ClusterIP
   selector:
-    component: server
+    component: backend-server-deployment
   ports:
     - port: 8080
       targetPort: 8080
