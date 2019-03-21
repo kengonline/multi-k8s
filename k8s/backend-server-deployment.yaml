@@ -31,7 +31,8 @@ spec:
             - name: DB_USERNAME
               value: postgres
             - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: dbpassword
-                  key: DB_PASSWORD
+              value: postgres_password
+              # valueFrom:
+              #   secretKeyRef:
+              #     name: dbpassword
+              #     key: DB_PASSWORD
