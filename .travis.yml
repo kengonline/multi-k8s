@@ -13,7 +13,7 @@ before_install:
   - gcloud auth activate-service-account --key-file bookstore-231807-e80e8d354e7a.json
   - gcloud config set project bookstore-231807
   - gcloud config set compute/zone us-central1-a
-  - gcloud container clusters get-credentials standard-cluster-1
+  - gcloud container clusters get-credentials multi-container-cluster
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
   - docker build -t kengonline/react-test -f ./frontend/Dockerfile.dev ./frontend
 
