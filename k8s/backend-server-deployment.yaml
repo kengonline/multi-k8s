@@ -13,7 +13,7 @@ spec:
         component: backend-server
     spec:
       containers:
-        - name: backend-server-deployment
+        - name: backend
           image: kengonline/multi-container-backend-server
           ports:
             - containerPort: 8080
