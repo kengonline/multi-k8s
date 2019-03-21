@@ -54,6 +54,9 @@ class HomePage extends Component {
 
         return (
             <div>
+                <h3>
+                    Fib on Kubernetes!
+                </h3>
                 <FibForm ref={c => this.FibForm = c} onSubmit={this.handleSubmit} />
 
                 <h3>Indicies I have seen:</h3>
