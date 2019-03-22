@@ -16,5 +16,6 @@ spec:
       - http01:
           ingressClass: nginx
         domains:
+          - bookstore.business
           - api.bookstore.business
           - www.bookstore.business
