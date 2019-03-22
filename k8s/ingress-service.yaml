@@ -5,9 +5,28 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    certmanager.k8s.io/cluster-issuer: "letsencrypt-prod"
 spec:
+  tls:
+    - hosts:
+        - bookstore.business
+        - www.bookstore.business
+      secretName: k8s-multi-com
   rules:
-    - http:
+    - host: bookstore.business
+      http:
+        paths:
+          - path: /?(.*)
+            backend:
+              serviceName: frontend-cluster-ip-service
+              servicePort: 3000
+          - path: /api/?(.*)
+            backend:
+              serviceName: backend-server-cluster-ip-service
+              servicePort: 8080
+    - host: www.bookstore.business
+      http:
         paths:
           - path: /?(.*)
             backend:
