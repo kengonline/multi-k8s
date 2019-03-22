@@ -9,12 +9,10 @@ spec:
     kind: ClusterIssuer
   commonName: bookstore.business
   dnsNames:
-    - bookstore.business
     - www.bookstore.business
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
-          - bookstore.business
           - www.bookstore.business

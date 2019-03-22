@@ -10,21 +10,9 @@ metadata:
 spec:
   tls:
     - hosts:
-        - bookstore.business
         - www.bookstore.business
       secretName: k8s-multi-com
   rules:
-    - host: bookstore.business
-      http:
-        paths:
-          - path: /?(.*)
-            backend:
-              serviceName: frontend-cluster-ip-service
-              servicePort: 3000
-          - path: /api/?(.*)
-            backend:
-              serviceName: backend-server-cluster-ip-service
-              servicePort: 8080
     - host: www.bookstore.business
       http:
         paths:
